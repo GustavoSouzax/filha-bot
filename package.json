@@ -1,0 +1,26 @@
+{
+  "name": "filha-bot",
+  "version": "1.5.0",
+  "description": "Um bot do discord feito em JS",
+  "main": "filha.js",
+  "scripts": {
+    "start": "node filha.js"
+  },
+  "keywords": [
+    "discord.js"
+  ],
+  "author": "GustavoSouzax",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.16.1",
+    "dotenv": "^16.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoSouzax/filha-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GustavoSouzax/filha-bot/issues"
+  },
+  "homepage": "https://github.com/GustavoSouzax/filha-bot#readme"
+}
