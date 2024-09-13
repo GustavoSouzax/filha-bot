@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+// Não mexa
 module.exports = (client) => {
   const slashCommandsPath = path.join(__dirname, '../comandos/slash');
   fs.readdirSync(slashCommandsPath).forEach(category => {

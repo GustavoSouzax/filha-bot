@@ -1,6 +1,5 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const dotenv = require('dotenv');
-const fs = require('fs');
 
 dotenv.config();
 
@@ -15,17 +14,17 @@ const client = new Client({
 client.slashCommands = new Collection();
 client.prefixCommands = new Collection();
 
-const loadSlashCommands = require('./handlers/comandos-slash');
-const loadPrefixCommands = require('./handlers/comandos-prefixo');
+const carregarSlashCommands = require('./handlers/comandos-slash');
+const carregarPrefixCommands = require('./handlers/comandos-prefixo');
 
-loadSlashCommands(client);
-loadPrefixCommands(client);
+carregarSlashCommands(client);
+carregarPrefixCommands(client);
 
 client.once('ready', () => {
   console.log(`${client.user.tag} Está online!!`);
 });
 
-// Comandos slash
+// Comandos slash - Se mexer é viado
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isCommand()) return;
 
@@ -40,7 +39,7 @@ client.on('interactionCreate', async (interaction) => {
   }
 });
 
-// Comandos de prefixo
+// Comandos de prefixo - Se mexer é viado
 client.on('messageCreate', (message) => {
   const prefix = process.env.PREFIX;
 

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+// Não mexa
 module.exports = (client) => {
   const prefixCommandsPath = path.join(__dirname, '../comandos/prefixo');
   fs.readdirSync(prefixCommandsPath).forEach(category => {
@@ -10,6 +10,11 @@ module.exports = (client) => {
       for (const file of commandFiles) {
         const command = require(`${categoryPath}/${file}`);
         client.prefixCommands.set(command.name, command);
+        if (command.aliases && Array.isArray(command.aliases)) {
+          command.aliases.forEach(alias => {
+            client.prefixCommands.set(alias, command)
+          });
+        }
       }
     }
   });
