@@ -1,9 +1,11 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { description } = require('./serverinfo');
 
 module.exports = {
-  data: new SlashCommandBuilder()
-    .setName('ping')
-    .setDescription('Mostra o ping do bot'),
+  data: {
+    name: 'ping',
+    description: 'Mostra o ping do bot',
+  },
 
   async execute(interaction) {
     const memoriaUsada = process.memoryUsage().heapUsed / 1024 / 1024;

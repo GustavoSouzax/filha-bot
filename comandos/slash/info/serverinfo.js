@@ -1,8 +1,10 @@
 const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
-  name: 'serverinfo',
-  description: 'Mostra as informações do servidor.',
+  data: {
+    name: 'serverinfo',
+    description: 'Mostra as informações do servidor.',
+  },
 
   async execute(message) {
     const { guild } = message;
